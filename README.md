@@ -25,16 +25,30 @@ Linux: ~/.gimp-2.10/themes   or   /home/<your user name>/.gimp-2.10/themes
 Screenshots
 ===
 
+  
+###The Dark Side of GIMP Theme  
 
-![alt text](https://raw.githubusercontent.com/Draekko-RAND/gimp-themes/gimp-2_10/screenshots/tdsog.png "The Dark Side of GIMP theme")
+![alt text](https://raw.githubusercontent.com/Draekko-RAND/gimp-themes/gimp-2_10/screenshots/tdsog.png "The Dark Side of GIMP theme")  
 
-![alt text](https://raw.githubusercontent.com/Draekko-RAND/gimp-themes/gimp-2_10/screenshots/dark.png "Dark theme")
+  
+###Dark Theme  
 
-![alt text](https://raw.githubusercontent.com/Draekko-RAND/gimp-themes/gimp-2_10/screenshots/sog.png "Sea of Gray theme")
+![alt text](https://raw.githubusercontent.com/Draekko-RAND/gimp-themes/gimp-2_10/screenshots/dark.png "Dark theme")  
 
-![alt text](https://raw.githubusercontent.com/Draekko-RAND/gimp-themes/gimp-2_10/screenshots/tlsog.png "The Light Side of GIMP theme")
+  
+###Sea of Gray Theme  
 
-![alt text](https://raw.githubusercontent.com/Draekko-RAND/gimp-themes/gimp-2_10/screenshots/light.png "Light theme")
+![alt text](https://raw.githubusercontent.com/Draekko-RAND/gimp-themes/gimp-2_10/screenshots/sog.png "Sea of Gray theme")  
+
+  
+###The Light Side of GIMP Theme  
+
+![alt text](https://raw.githubusercontent.com/Draekko-RAND/gimp-themes/gimp-2_10/screenshots/tlsog.png "The Light Side of GIMP theme")  
+
+  
+###Light Theme  
+
+![alt text](https://raw.githubusercontent.com/Draekko-RAND/gimp-themes/gimp-2_10/screenshots/light.png "Light theme")  
 
 
 
