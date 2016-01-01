@@ -34,7 +34,7 @@ Screenshots
 
 ![alt text](https://raw.githubusercontent.com/Draekko-RAND/gimp-themes/gimp-2_10/screenshots/tlsog.png "The Light Side of GIMP theme")
 
-![alt text](https://raw.githubusercontent.com/Draekko-RAND/gimp-themes/gimp-2_10/screenshots/gimp-2_10/light.png "Light theme")
+![alt text](https://raw.githubusercontent.com/Draekko-RAND/gimp-themes/gimp-2_10/screenshots/light.png "Light theme")
 
 
 
