@@ -26,15 +26,15 @@ Screenshots
 ===
 
 
-![alt text](https://github.com/draekko/gimp-themes/screenshots/raw/master/tdsog.png "The Dark Side of GIMP theme")
+![alt text](https://github.com/draekko/gimp-themes/screenshots/raw/gimp-2_10/tdsog.png "The Dark Side of GIMP theme")
 
-![alt text](https://github.com/draekko/gimp-themes/screenshots/raw/master/dark.png "Dark theme")
+![alt text](https://github.com/draekko/gimp-themes/screenshots/raw/gimp-2_10/dark.png "Dark theme")
 
-![alt text](https://github.com/draekko/gimp-themes/screenshots/raw/master/sog.png "Sea of Gray theme")
+![alt text](https://github.com/draekko/gimp-themes/screenshots/raw/gimp-2_10/sog.png "Sea of Gray theme")
 
-![alt text](https://github.com/draekko/gimp-themes/screenshots/raw/master/tlsog.png "The Light Side of GIMP theme")
+![alt text](https://github.com/draekko/gimp-themes/screenshots/raw/gimp-2_10/tlsog.png "The Light Side of GIMP theme")
 
-![alt text](https://github.com/draekko/gimp-themes/screenshots/raw/master/light.png "Light theme")
+![alt text](https://github.com/draekko/gimp-themes/screenshots/raw/gimp-2_10/light.png "Light theme")
 
 
 
