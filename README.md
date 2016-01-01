@@ -17,7 +17,7 @@ Mac OS X: ~/Library/Application Support/GIMP/2.10/themes   or   ~/.gimp-2.10/the
 
    * (You may have to unhide the Library folder first)
 
-Linux: ~/.gimp-2.8/themes   or   /home/<your user name>/.gimp-2.10/themes
+Linux: ~/.gimp-2.10/themes   or   /home/<your user name>/.gimp-2.10/themes
 
 (For the development version use 2.9 as the user settings directory)
 
