@@ -56,14 +56,14 @@ gtk-auto-mnemonics = 1
 gtk-primary-button-warps-slider = 1
 gtk-toolbar-style = GTK_TOOLBAR_ICONS
 
-#gtk-font-name = "Sans 11"
+gtk-font-name = "Sans 11"
 
 # KDE hack to match gtk/gnome defaults
 gtk-button-images = 0
 
 style "tdsog-default-style"
 {
-#  font_name = "Sans 11"
+  font_name = "Sans 11"
 
   color["clr1"] = "#EEEEEE"
   color["clr2"] = "#DDDDDD"
@@ -128,8 +128,8 @@ style "tdsog-default-style"
   GtkDialog::action-area-border = 12
   GimpUnitComboBox::appears-as-list = 0
   GtkComboBox::appears-as-list = 0
-  GtkButton::focus-line_width = 0
-  GtkButton::focus-padding = 0
+  #GtkButton::focus-line_width = 0
+  #GtkButton::focus-padding = 4
 
   GtkScrollbar::trough-border = 0
   GtkRange::trough-border = 0
