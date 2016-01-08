@@ -1,8 +1,7 @@
 ############################################################################
 #
 # The Dark Side of GIMP Theme
-#
-# Version 0.1.0
+# Version 0.1.1
 #
 # Copyright 2015, Benoit Touchette
 #
@@ -39,10 +38,8 @@
 # KDE:
 #
 # * For this theme to work under KDE users will need to disable either
-#   "Apply colors to non-QT applications" or "Apply KDE Colours to Non-KDE
-#   apps" depending on the version of KDE used.
-#
-# * The QtCurve theme overrides GIMP theme menu colors to the KDE defaults.
+#   "Apply colors to non-QT applications" or "Apply KDE Colours to Non-KDE 
+#   apps" depending on the version.
 #
 # Miscellaneous:
 #
@@ -53,8 +50,9 @@
 gtk-menu-images = 1
 gtk-button-images = 0
 gtk-auto-mnemonics = 1
-gtk-primary-button-warps-slider = 1
+#gtk-primary-button-warps-slider = 1
 gtk-toolbar-style = GTK_TOOLBAR_ICONS
+gtk-application-prefer-dark-theme = true
 
 #gtk-font-name = "Sans 11"
 
@@ -201,18 +199,8 @@ style "tdsog-default-style"
 
       image
         {
-          function = RESIZE_GRIP
-          state = NORMAL
-          detail = "statusbar"
-          overlay_file = "ui/null.png"
-          overlay_border = { 0,0,0,0 }
-          overlay_stretch = FALSE
-        }
-
-      image
-        {
           function = SHADOW_GAP
-          file = "ui/null.png"
+          file = "ui/shadow-null.png"
           border = { 4, 4, 4, 4 }
           stretch = TRUE
         }
@@ -429,7 +417,7 @@ style "tdsog-tooltips-style" = "tdsog-default-style"
   fg[NORMAL] = "#CBCBCB"
 }
 
-widget "gtk-tooltip" style "tdsog-tooltips-style"
+widget "gtk-tooltip*" style "tdsog-tooltips-style"
 
 ###########################################################
 
@@ -974,7 +962,7 @@ style "tdsog-entry" = "tdsog-default-style"
         {
           function = SHADOW
           detail = "entry"
-          file = "ui/null.png"
+          file = "ui/shadow-null.png"
           border = { 4, 4, 4, 4 }
           stretch = TRUE
         }
@@ -1175,7 +1163,7 @@ style "tdsog-scroll-bar"
         {
           function = BOX
           recolorable = TRUE
-          file = "ui/transparent.png"
+          file = "ui/null.png"
           border = {0,0,0,0}
           stretch = TRUE
         }
@@ -1804,7 +1792,7 @@ style "tdsog-range-style"
       image
         {
           function = BOX
-          file = "ui/null.png"
+          file = "ui/transparent.png"
           border = { 3, 3, 3, 3 }
           stretch = TRUE
         }
@@ -2238,6 +2226,8 @@ style "tdsog-combobox-style"
 
 widget_class "*<GtkComboBox>" style "tdsog-combobox-style"
 
+###########################################################
+
 style "tdsog-combobox-style1"
 {
   xthickness = 0
@@ -2456,9 +2446,6 @@ widget_class "*<GtkTreeView>*<GtkButton>*" style "kde_hack_6"
 # KDE & oxygen-gtk fix for BG
 style "tdsog-oxygen-default-style" = "tdsog-default-style"
 {
-  engine "oxygen-gtk"
-    {
-    }
 }
 class "*" style "tdsog-oxygen-default-style"
 

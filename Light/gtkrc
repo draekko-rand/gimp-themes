@@ -2,7 +2,7 @@
 #
 # Light GIMP Theme
 #
-# Version 0.1.0
+# Version 0.1.1
 #
 # Copyright 2015, Benoit Touchette
 #
@@ -39,10 +39,8 @@
 # KDE:
 #
 # * For this theme to work under KDE users will need to disable either
-#   "Apply colors to non-QT applications" or "Apply KDE Colours to Non-KDE
-#   apps" depending on the version of KDE used.
-#
-# * The QtCurve theme overrides GIMP theme menu colors to the KDE defaults.
+#   "Apply colors to non-QT applications" or "Apply KDE Colours to Non-KDE 
+#   apps" depending on the version.
 #
 # Miscellaneous:
 #
@@ -53,8 +51,9 @@
 gtk-menu-images = 1
 gtk-button-images = 0
 gtk-auto-mnemonics = 1
-gtk-primary-button-warps-slider = 1
+#gtk-primary-button-warps-slider = 1
 gtk-toolbar-style = GTK_TOOLBAR_ICONS
+gtk-application-prefer-dark-theme = true
 
 #gtk-font-name = "Sans 11"
 
@@ -62,7 +61,7 @@ gtk-toolbar-style = GTK_TOOLBAR_ICONS
 # KDE hack to match gtk/gnome defaults
 gtk-button-images = 0
 
-style "tlsog-default-style"
+style "gimp-light-default-style"
 {
 #  font_name = "Sans 11"
 
@@ -165,7 +164,10 @@ style "tlsog-default-style"
 
   GtkWidget::tooltip-radius = 2
   GtkWidget::tooltip-alpha = 235
-  GtkWidget::new-tooltip-style = 1 #for compatibility
+  GtkWidget::new-tooltip-style = 1
+
+  GtkWindow::resize-grip-height = 0
+  GtkWindow::resize-grip-width = 0
 
   engine "pixmap"
     {
@@ -199,18 +201,8 @@ style "tlsog-default-style"
 
       image
         {
-          function = RESIZE_GRIP
-          state = NORMAL
-          detail = "statusbar"
-          overlay_file = "ui/null.png"
-          overlay_border = { 0,0,0,0 }
-          overlay_stretch = FALSE
-        }
-
-      image
-        {
           function = SHADOW_GAP
-          file = "ui/null.png"
+          file = "ui/shadow-null.png"
           border = { 4, 4, 4, 4 }
           stretch = TRUE
         }
@@ -301,40 +293,40 @@ style "tlsog-default-style"
     }
 }
 
-class "GtkWidget" style "tlsog-default-style"
+class "GtkWidget" style "gimp-light-default-style"
 
 ###########################################################
 
-style "tlsog-tool-dialog-style" = "tlsog-default-style"
+style "gimp-light-tool-dialog-style" = "gimp-light-default-style"
 {
   GtkDialog::action-area-border = 6
 }
 
-class "GimpToolDialog" style "tlsog-tool-dialog-style"
+class "GimpToolDialog" style "gimp-light-tool-dialog-style"
 
 ###########################################################
 
-style "tlsog-grid-view-style" = "tlsog-default-style"
+style "gimp-light-grid-view-style" = "gimp-light-default-style"
 {
   bg[NORMAL] = { 1.0, 1.0, 1.0 }
 }
 
-widget "*GimpContainerGridView*GtkViewport*" style "tlsog-grid-view-style"
+widget "*GimpContainerGridView*GtkViewport*" style "gimp-light-grid-view-style"
 
 ###########################################################
 
-style "tlsog-dockable-style" = "tlsog-default-style"
+style "gimp-light-dockable-style" = "gimp-light-default-style"
 {
   GimpFrame::label-bold = 0
   GtkButton::focus-line_width = 1
   GtkButton::focus-padding = 0
 }
 
-widget "*GimpDockable.*" style "tlsog-dockable-style"
+widget "*GimpDockable.*" style "gimp-light-dockable-style"
 
 ###########################################################
 
-style "tlsog-display-style" = "tlsog-default-style"
+style "gimp-light-display-style" = "gimp-light-default-style"
 {
   GimpRuler::font-scale = 0.6444
   GimpUnitComboBox::label-scale = 0.8333
@@ -345,20 +337,20 @@ style "tlsog-display-style" = "tlsog-default-style"
   GtkButton::focus-padding = 0
 }
 
-widget "*GimpDisplayShell.*" style "tlsog-display-style"
+widget "*GimpDisplayShell.*" style "gimp-light-display-style"
 
 ###########################################################
 
-style "tlsog-overlay-style" = "gimp-display-style"
+style "gimp-light-overlay-style" = "gimp-display-style"
 {
   GtkButton::focus-line_width = 1
 }
 
-widget_class "*<GimpOverlayFrame>*" style "tlsog-overlay-style"
+widget_class "*<GimpOverlayFrame>*" style "gimp-light-overlay-style"
 
 ###########################################################
 
-style "tlsog-gtkbutton-style" = "tlsog-default-style"
+style "gimp-light-gtkbutton-style" = "gimp-light-default-style"
 {
   xthickness = 3
   ythickness = 3
@@ -413,11 +405,11 @@ style "tlsog-gtkbutton-style" = "tlsog-default-style"
     }
 }
 
-class "GtkButton" style "tlsog-gtkbutton-style"
+class "GtkButton" style "gimp-light-gtkbutton-style"
 
 ###########################################################
 
-style "tlsog-tooltips-style" = "tlsog-default-style"
+style "gimp-light-tooltips-style" = "gimp-light-default-style"
 {
   xthickness = 4
   ythickness = 4
@@ -427,11 +419,11 @@ style "tlsog-tooltips-style" = "tlsog-default-style"
   fg[NORMAL] = "#343434"
 }
 
-widget "gtk-tooltip" style "tlsog-tooltips-style"
+widget "gtk-tooltip*" style "gimp-light-tooltips-style"
 
 ###########################################################
 
-style "tlsog-treeview" = "tlsog-default-style"
+style "gimp-light-treeview" = "gimp-light-default-style"
 {
   xthickness = 2
   ythickness = 0
@@ -454,6 +446,42 @@ style "tlsog-treeview" = "tlsog-default-style"
       image
         {
           function = FLAT_BOX
+          state = ACTIVE
+          file = "ui/null.png"
+          border = {1,1,1,1}
+          stretch = TRUE
+        }
+
+      image
+        {
+          function = FLAT_BOX
+          state = PRELIGHT
+          file = "ui/null.png"
+          border = {1,1,1,1}
+          stretch = TRUE
+        }
+
+      image
+        {
+          function = FLAT_BOX
+          state = NORMAL
+          file = "ui/null.png"
+          border = {1,1,1,1}
+          stretch = TRUE
+        }
+
+      image
+        {
+          function = FLAT_BOX
+          state = INSENSITIVE
+          file = "ui/null.png"
+          border = {1,1,1,1}
+          stretch = TRUE
+        }
+
+      image
+        {
+          function = FLAT_BOX
           state = SELECTED
           file = "ui/menuitem.png"
           border = {1,1,1,1}
@@ -462,11 +490,11 @@ style "tlsog-treeview" = "tlsog-default-style"
     }
 }
 
-class "GtkTreeView" style "tlsog-treeview"
+class "GtkTreeView" style "gimp-light-treeview"
 
 ###########################################################
 
-style "tlsog-list-header-style"
+style "gimp-light-list-header-style"
 {
   #Comment out the ythickness setting below for thicker column headers.
   #ythickness = 0
@@ -542,31 +570,13 @@ style "tlsog-list-header-style"
     }
 }
 
-widget_class "*List" style "tlsog-list-header-style"
-widget_class "*GtkTree*" style "tlsog-list-header-style"
-widget_class "*GtkCList" style "tlsog-list-header-style"
+widget_class "*List" style "gimp-light-list-header-style"
+widget_class "*GtkTree*" style "gimp-light-list-header-style"
+widget_class "*GtkCList" style "gimp-light-list-header-style"
 
 ###########################################################
 
-style "tlsog-list-header-style"
-{
-  engine "pixmap"
-    {
-      image
-        {
-          function = BOX
-          recolorable = TRUE
-          file = "ui/gimp-button-normal.png"
-          border = { 0, 0, 0, 0 }
-          stretch = TRUE
-        }
-    }
-}
-widget_class "*GtkComboBox*" style "tlsog-list-header-style"
-
-###########################################################
-
-style "tlsog-notebook-style" = "tlsog-default-style"
+style "gimp-light-notebook-style" = "gimp-light-default-style"
 {
   engine "pixmap"
     {
@@ -722,11 +732,11 @@ style "tlsog-notebook-style" = "tlsog-default-style"
     }
 }
 
-class "GtkNotebook" style "tlsog-notebook-style"
+class "GtkNotebook" style "gimp-light-notebook-style"
 
 ###########################################################
 
-style "tlsog-menu" = "tlsog-default-style"
+style "gimp-light-menu" = "gimp-light-default-style"
 {
   bg[NORMAL] = "#DDDDDD"
 
@@ -756,12 +766,12 @@ style "tlsog-menu" = "tlsog-default-style"
     }
 }
 
-class "GtkMenu" style "tlsog-menu"
-widget_class "*<GtkMenu>*" style "tlsog-menu"
+class "GtkMenu" style "gimp-light-menu"
+widget_class "*<GtkMenu>*" style "gimp-light-menu"
 
 ###########################################################
 
-style "tlsog-menu-bar" = "tlsog-default-style"
+style "gimp-light-menu-bar" = "gimp-light-default-style"
 {
   xthickness = 4
   ythickness = 2
@@ -780,9 +790,9 @@ style "tlsog-menu-bar" = "tlsog-default-style"
     }
 }
 
-class "GtkMenuBar" style "tlsog-menu-bar"
-widget_class "*<GtkMenuBar>*" style "tlsog-menu-bar"
-widget_class "*<GtkMenuBar>.<GtkMenuItem>*" style "tlsog-menu-bar"
+class "GtkMenuBar" style "gimp-light-menu-bar"
+widget_class "*<GtkMenuBar>*" style "gimp-light-menu-bar"
+widget_class "*<GtkMenuBar>.<GtkMenuItem>*" style "gimp-light-menu-bar"
 
 ###########################################################
 
@@ -805,7 +815,7 @@ style "menu_item"
         {
           function = BOX
           state = PRELIGHT
-          file = "ui/entry-border-fill-active-item.png"
+          file = "ui/entry-border-fill-active.png"
           border = { 1, 0, 1, 0 }
           stretch = TRUE
         }
@@ -874,7 +884,7 @@ widget_class "*<GtkMenuItem>*" style "menu_item"
 
 ###########################################################
 
-style "tlsog-item"
+style "gimp-light-item"
 {
   xthickness = 4
 
@@ -902,7 +912,7 @@ style "tlsog-item"
           function = ARROW
           recolorable = TRUE
           state = PRELIGHT
-          overlay_file = "ui/gimp-arrow-right-prelight.png"
+          overlay_file = "ui/gimp-arrow-right.png"
           overlay_stretch = FALSE
           arrow_direction = RIGHT
         }
@@ -919,12 +929,12 @@ style "tlsog-item"
     }
 }
 
-class "GtkItem" style "tlsog-item"
+class "GtkItem" style "gimp-light-item"
 
 ###########################################################
 
 
-style "tlsog-entry" = "tlsog-default-style"
+style "gimp-light-entry" = "gimp-light-default-style"
 {
   GtkWidget::interior_focus = 1
 
@@ -957,7 +967,7 @@ style "tlsog-entry" = "tlsog-default-style"
         {
           function = SHADOW
           detail = "entry"
-          file = "ui/null.png"
+          file = "ui/shadow-null.png"
           border = { 4, 4, 4, 4 }
           stretch = TRUE
         }
@@ -974,13 +984,13 @@ style "tlsog-entry" = "tlsog-default-style"
     }
 }
 
-class "GtkEntry" style "tlsog-entry"
-class "GtkOldEditable" style "tlsog-entry"
+class "GtkEntry" style "gimp-light-entry"
+class "GtkOldEditable" style "gimp-light-entry"
 
 ###########################################################
 
 
-style "tlsog-spin-button" = "tlsog-entry"
+style "gimp-light-spin-button" = "gimp-light-entry"
 {
   engine "pixmap"
     {
@@ -1095,11 +1105,11 @@ style "tlsog-spin-button" = "tlsog-entry"
     }
 }
 
-class "GtkSpinButton" style "tlsog-spin-button"
+class "GtkSpinButton" style "gimp-light-spin-button"
 
 ###########################################################
 
-style "tlsog-scroll-bar"
+style "gimp-light-scroll-bar"
 {
   GtkRange::trough_border = 0
   GtkVScale::slider_length = 16
@@ -1158,7 +1168,7 @@ style "tlsog-scroll-bar"
         {
           function = BOX
           recolorable = TRUE
-          file = "ui/transparent.png"
+          file = "ui/null.png"
           border = {0,0,0,0}
           stretch = TRUE
         }
@@ -1167,7 +1177,6 @@ style "tlsog-scroll-bar"
         {
           function = ARROW
           recolorable = TRUE
-          file = "ui/null.png"
           state = NORMAL
           overlay_file = "ui/null.png"
           overlay_border = {0,0,0,0}
@@ -1179,7 +1188,6 @@ style "tlsog-scroll-bar"
         {
           function = ARROW
           recolorable = TRUE
-          file = "ui/null.png"
           state = NORMAL
           overlay_file = "ui/null.png"
           overlay_border = {0,0,0,0}
@@ -1191,7 +1199,6 @@ style "tlsog-scroll-bar"
         {
           function = ARROW
           recolorable = TRUE
-          file = "ui/null.png"
           state = NORMAL
           overlay_file = "ui/null.png"
           overlay_border = {0,0,0,0}
@@ -1204,7 +1211,6 @@ style "tlsog-scroll-bar"
           function = ARROW
           recolorable = TRUE
           state = NORMAL
-          file = "ui/null.png"
           overlay_file = "ui/null.png"
           overlay_border = {0,0,0,0}
           overlay_stretch = FALSE
@@ -1216,7 +1222,6 @@ style "tlsog-scroll-bar"
           function = ARROW
           recolorable = TRUE
           state = PRELIGHT
-          file = "ui/null.png"
           overlay_file = "ui/null.png"
           overlay_border = {0,0,0,0}
           overlay_stretch = FALSE
@@ -1227,7 +1232,6 @@ style "tlsog-scroll-bar"
         {
           function = ARROW
           recolorable = TRUE
-          file = "ui/null.png"
           state = PRELIGHT
           overlay_file = "ui/null.png"
           overlay_border = {0,0,0,0}
@@ -1240,7 +1244,6 @@ style "tlsog-scroll-bar"
           function = ARROW
           recolorable = TRUE
           state = PRELIGHT
-          file = "ui/null.png"
           overlay_file = "ui/null.png"
           overlay_border = {0,0,0,0}
           overlay_stretch = FALSE
@@ -1251,7 +1254,6 @@ style "tlsog-scroll-bar"
         {
           function = ARROW
           recolorable = TRUE
-          file = "ui/null.png"
           state = PRELIGHT
           overlay_file = "ui/null.png"
           overlay_border = {0,0,0,0}
@@ -1264,7 +1266,6 @@ style "tlsog-scroll-bar"
           function = ARROW
           recolorable = TRUE
           state = INSENSITIVE
-          file = "ui/null.png"
           overlay_file = "ui/null.png"
           overlay_border = {0,0,0,0}
           overlay_stretch = FALSE
@@ -1276,7 +1277,6 @@ style "tlsog-scroll-bar"
           function = ARROW
           recolorable = TRUE
           state = INSENSITIVE
-          file = "ui/null.png"
           overlay_file = "ui/null.png"
           overlay_border = {0,0,0,0}
           overlay_stretch = FALSE
@@ -1288,7 +1288,6 @@ style "tlsog-scroll-bar"
           function = ARROW
           recolorable = TRUE
           state = INSENSITIVE
-          file = "ui/null.png"
           overlay_file = "ui/null.png"
           overlay_border = {0,0,0,0}
           overlay_stretch = FALSE
@@ -1299,7 +1298,6 @@ style "tlsog-scroll-bar"
         {
           function = ARROW
           recolorable = TRUE
-          file = "ui/null.png"
           state = INSENSITIVE
           overlay_file = "ui/null.png"
           overlay_border = {0,0,0,0}
@@ -1312,7 +1310,6 @@ style "tlsog-scroll-bar"
           function = ARROW
           recolorable = TRUE
           shadow = IN
-          file = "ui/null.png"
           overlay_file = "ui/null.png"
           overlay_border = {0,0,0,0}
           overlay_stretch = FALSE
@@ -1324,7 +1321,6 @@ style "tlsog-scroll-bar"
           function = ARROW
           recolorable = TRUE
           shadow = IN
-          file = "ui/null.png"
           overlay_file = "ui/null.png"
           overlay_border = {0,0,0,0}
           overlay_stretch = FALSE
@@ -1336,7 +1332,6 @@ style "tlsog-scroll-bar"
           function = ARROW
           recolorable = TRUE
           shadow = IN
-          file = "ui/null.png"
           overlay_file = "ui/null.png"
           overlay_border = {0,0,0,0}
           overlay_stretch = FALSE
@@ -1348,7 +1343,6 @@ style "tlsog-scroll-bar"
           function = ARROW
           recolorable = TRUE
           shadow = IN
-          file = "ui/null.png"
           overlay_file = "ui/null.png"
           overlay_border = {0,0,0,0}
           overlay_stretch = FALSE
@@ -1357,11 +1351,11 @@ style "tlsog-scroll-bar"
     }
 }
 
-class "GtkScrollbar" style "tlsog-scroll-bar"
+class "GtkScrollbar" style "gimp-light-scroll-bar"
 
 ###########################################################
 
-style "tlsog-radio-button" = "tlsog-default-style"
+style "gimp-light-radio-button" = "gimp-light-default-style"
 {
   engine "pixmap"
     {
@@ -1394,12 +1388,12 @@ style "tlsog-radio-button" = "tlsog-default-style"
     }
 }
 
-class "GtkRadioButton"   style "tlsog-radio-button"
-class "GtkRadioMenuItem"  style "tlsog-radio-button"
+class "GtkRadioButton"   style "gimp-light-radio-button"
+class "GtkRadioMenuItem"  style "gimp-light-radio-button"
 
 ###########################################################
 
-style "tlsog-check-button" = "tlsog-default-style"
+style "gimp-light-check-button" = "gimp-light-default-style"
 {
   engine "pixmap"
     {
@@ -1435,12 +1429,12 @@ style "tlsog-check-button" = "tlsog-default-style"
     }
 }
 
-class "GtkCheckButton"   style "tlsog-check-button"
-class "GtkCheckMenuItem"   style "tlsog-check-button"
+class "GtkCheckButton"   style "gimp-light-check-button"
+class "GtkCheckMenuItem"   style "gimp-light-check-button"
 
 ###########################################################
 
-style "tlsog-progress-bar" = "tlsog-default-style"
+style "gimp-light-progress-bar" = "gimp-light-default-style"
 {
   xthickness = 1
   ythickness = 1
@@ -1470,11 +1464,11 @@ style "tlsog-progress-bar" = "tlsog-default-style"
     }
 }
 
-class "GtkProgressBar" style "tlsog-progress-bar"
+class "GtkProgressBar" style "gimp-light-progress-bar"
 
 ###########################################################
 
-style "tlsog-separator-menu-item"
+style "gimp-light-separator-menu-item"
 {
   engine "pixmap"
     {
@@ -1488,11 +1482,11 @@ style "tlsog-separator-menu-item"
     }
 }
 
-class "GtkSeparatorMenuItem" style "tlsog-separator-menu-item"
+class "GtkSeparatorMenuItem" style "gimp-light-separator-menu-item"
 
 ###########################################################
 
-style "tlsog-notebook-entry-style"
+style "gimp-light-notebook-entry-style"
 {
   engine "pixmap"
     {
@@ -1530,11 +1524,11 @@ style "tlsog-notebook-entry-style"
     }
 }
 
-widget_class "*<GtkNotebook>*<GtkEntry>" style "tlsog-notebook-entry-style"
+widget_class "*<GtkNotebook>*<GtkEntry>" style "gimp-light-notebook-entry-style"
 
 ###########################################################
 
-style "tlsog-notebook-combobox-entry-style"
+style "gimp-light-notebook-combobox-entry-style"
 {
   engine "pixmap"
     {
@@ -1612,11 +1606,11 @@ style "tlsog-notebook-combobox-entry-style"
     }
 }
 
-widget_class "*<GtkNotebook>*<GtkComboBoxEntry>*<GtkEntry>" style "tlsog-notebook-combobox-entry-style"
+widget_class "*<GtkNotebook>*<GtkComboBoxEntry>*<GtkEntry>" style "gimp-light-notebook-combobox-entry-style"
 
 ###########################################################
 
-style "tlsog-combobox-entry-button-style"
+style "gimp-light-combobox-entry-button-style"
 {
   xthickness = 6
 
@@ -1708,12 +1702,12 @@ style "tlsog-combobox-entry-button-style"
     }
 }
 
-widget_class "*<GtkComboBoxEntry>*<GtkEntry>" style "tlsog-combobox-entry-button-style"
-widget_class "*<GtkNotebook>*<GtkEventBox>*<GtkComboBoxEntry>*<GtkEntry>" style "tlsog-combobox-entry-button-style"
+widget_class "*<GtkComboBoxEntry>*<GtkEntry>" style "gimp-light-combobox-entry-button-style"
+widget_class "*<GtkNotebook>*<GtkEventBox>*<GtkComboBoxEntry>*<GtkEntry>" style "gimp-light-combobox-entry-button-style"
 
 ###########################################################
 
-style "tlsog-range-style"
+style "gimp-light-range-style"
 {
   engine "pixmap"
     {
@@ -1803,18 +1797,18 @@ style "tlsog-range-style"
       image
         {
           function = BOX
-          file = "ui/null.png"
+          file = "ui/transparent.png"
           border = { 3, 3, 3, 3 }
           stretch = TRUE
         }
     }
 }
 
-class "GtkRange" style "tlsog-range-style"
+class "GtkRange" style "gimp-light-range-style"
 
 ###########################################################
 
-style "tlsog-spin-scale-style"
+style "gimp-light-spin-scale-style"
 {
   bg[NORMAL] = "#BDBDBD"
 
@@ -1908,11 +1902,11 @@ style "tlsog-spin-scale-style"
     }
 }
 
-class "GimpSpinScale" style "tlsog-spin-scale-style"
+class "GimpSpinScale" style "gimp-light-spin-scale-style"
 
 ###########################################################
 
-style "tlsog-scrolled-window-style"
+style "gimp-light-scrolled-window-style"
 {
   xthickness = 1
   ythickness = 1
@@ -1929,11 +1923,11 @@ style "tlsog-scrolled-window-style"
     }
 }
 
-class "GtkScrolledWindow" style "tlsog-scrolled-window-style"
+class "GtkScrolledWindow" style "gimp-light-scrolled-window-style"
 
 ###########################################################
 
-style "tlsog-frame-style"
+style "gimp-light-frame-style"
 {
   xthickness = 1
   ythickness = 1
@@ -2030,11 +2024,11 @@ style "tlsog-frame-style"
     }
 }
 
-class "GtkFrame" style "tlsog-frame-style"
+class "GtkFrame" style "gimp-light-frame-style"
 
 ###########################################################
 
-style "tlsog-toolbox-frame-style"
+style "gimp-light-toolbox-frame-style"
 {
   engine "pixmap"
     {
@@ -2045,11 +2039,11 @@ style "tlsog-toolbox-frame-style"
     }
 }
 
-widget_class "*<GimpToolbox>*<GtkFrame>" style "tlsog-toolbox-frame-style"
+widget_class "*<GimpToolbox>*<GtkFrame>" style "gimp-light-toolbox-frame-style"
 
 ###########################################################
 
-style "tlsog-toolbar-style"
+style "gimp-light-toolbar-style"
 {
   engine "pixmap"
     {
@@ -2059,6 +2053,16 @@ style "tlsog-toolbar-style"
           file = "ui/toolbar.png"
           stretch = TRUE
           border = { 1, 1, 1, 1 }
+        }
+
+      image
+        {
+          function = BOX_GAP
+          recolorable = TRUE
+          detail = "handlebox_bin"
+          file = "ui/gimp-handle-h.png"
+          border = { 4, 3, 4, 3 }
+          stretch = FALSE
         }
 
       image
@@ -2097,23 +2101,23 @@ style "tlsog-toolbar-style"
     }
 }
 
-class "GtkToolbar" style "tlsog-toolbar-style"
-class "*HandleBox" style "tlsog-toolbar-style"
+class "GtkToolbar" style "gimp-light-toolbar-style"
+class "*HandleBox*" style "gimp-light-toolbar-style"
 
 ###########################################################
 
-style "tlsog-combobox-separator-style"
+style "gimp-light-combobox-separator-style"
 {
   xthickness = 0
   ythickness = 0
   GtkWidget::wide-separators = 1
 }
 
-widget_class "*<GtkComboBox>*<GtkSeparator>" style "tlsog-combobox-separator-style"
+widget_class "*<GtkComboBox>*<GtkSeparator>" style "gimp-light-combobox-separator-style"
 
 ###########################################################
 
-style "tlsog-combobox-entry-button-style"
+style "gimp-light-combobox-entry-button-style"
 {
   xthickness = 6
 
@@ -2205,31 +2209,52 @@ style "tlsog-combobox-entry-button-style"
     }
 }
 
-widget_class "*<GtkComboBoxEntry>*<GtkButton>" style "tlsog-combobox-entry-button-style"
+widget_class "*<GtkComboBoxEntry>*<GtkButton>" style "gimp-light-combobox-entry-button-style"
 
 ###########################################################
 
-style "tlsog-combobox-button-style"
+style "gimp-light-combobox-button-style"
 {
   xthickness = 3
   ythickness = 3
 }
 
-widget_class "*<GtkComboBox>*<GtkButton>" style "tlsog-combobox-button-style"
+widget_class "*<GtkComboBox>*<GtkButton>" style "gimp-light-combobox-button-style"
 
 ###########################################################
 
-style "tlsog-combobox-style"
+style "gimp-light-combobox-style"
 {
   xthickness = 0
   ythickness = 0
 }
 
-widget_class "*<GtkComboBox>" style "tlsog-combobox-style"
+widget_class "*<GtkComboBox>" style "gimp-light-combobox-style"
 
 ###########################################################
 
-style "tlsog-button-style"
+style "gimp-light-combobox-style1"
+{
+  xthickness = 0
+  ythickness = 0
+
+  engine "pixmap"
+    {
+      image
+        {
+          function = BOX
+          file = "ui/gimp-button-normal.png"
+          border = { 4, 4, 5, 4 }
+          stretch = TRUE
+        }
+    }
+}
+
+widget_class "*<GtkEntry>*<GtkButton>*" style "gimp-light-combobox-style1"
+
+###########################################################
+
+style "gimp-light-button-style"
 {
   fg[PRELIGHT] = "#040404"
   fg[ACTIVE] = "#DDDDDD"
@@ -2237,7 +2262,7 @@ style "tlsog-button-style"
   fg[INSENSITIVE] = "#343434"
 }
 
-widget_class "*GtkButton*" style "tlsog-button-style"
+widget_class "*GtkButton*" style "gimp-light-button-style"
 
 ###########################################################
 
@@ -2365,7 +2390,7 @@ widget_class "*<GtkWidget>*" style "kde_hack_4"
 ###########################################################
 
 # KDE Hack 5
-widget_class "*<GtkToolbar>*" style "tlsog-toolbar-style"
+widget_class "*<GtkToolbar>*" style "gimp-light-toolbar-style"
 
 ###########################################################
 
@@ -2426,9 +2451,6 @@ widget_class "*<GtkTreeView>*<GtkButton>*" style "kde_hack_6"
 # KDE & oxygen-gtk fix for BG
 style "tdsog-oxygen-default-style" = "tdsog-default-style"
 {
-  engine "oxygen-gtk"
-    {
-    }
 }
 class "*" style "tdsog-oxygen-default-style"
 

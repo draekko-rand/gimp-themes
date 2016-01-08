@@ -2,7 +2,7 @@
 #
 # The Light Side of GIMP Theme
 #
-# Version 0.1.0
+# Version 0.1.1
 #
 # Copyright 2015, Benoit Touchette
 #
@@ -39,10 +39,8 @@
 # KDE:
 #
 # * For this theme to work under KDE users will need to disable either
-#   "Apply colors to non-QT applications" or "Apply KDE Colours to Non-KDE
-#   apps" depending on the version of KDE used.
-#
-# * The QtCurve theme overrides GIMP theme menu colors to the KDE defaults.
+#   "Apply colors to non-QT applications" or "Apply KDE Colours to Non-KDE 
+#   apps" depending on the version.
 #
 # Miscellaneous:
 #
@@ -53,8 +51,9 @@
 gtk-menu-images = 1
 gtk-button-images = 0
 gtk-auto-mnemonics = 1
-gtk-primary-button-warps-slider = 1
+#gtk-primary-button-warps-slider = 1
 gtk-toolbar-style = GTK_TOOLBAR_ICONS
+gtk-application-prefer-dark-theme = true
 
 #gtk-font-name = "Sans 11"
 
@@ -164,7 +163,10 @@ style "tlsog-default-style"
 
   GtkWidget::tooltip-radius = 2
   GtkWidget::tooltip-alpha = 235
-  GtkWidget::new-tooltip-style = 1 #for compatibility
+  GtkWidget::new-tooltip-style = 1
+
+  GtkWindow::resize-grip-height = 0
+  GtkWindow::resize-grip-width = 0
 
   engine "pixmap"
     {
@@ -198,18 +200,8 @@ style "tlsog-default-style"
 
       image
         {
-          function = RESIZE_GRIP
-          state = NORMAL
-          detail = "statusbar"
-          overlay_file = "ui/null.png"
-          overlay_border = { 0,0,0,0 }
-          overlay_stretch = FALSE
-        }
-
-      image
-        {
           function = SHADOW_GAP
-          file = "ui/null.png"
+          file = "ui/shadow-null.png"
           border = { 4, 4, 4, 4 }
           stretch = TRUE
         }
@@ -426,7 +418,7 @@ style "tlsog-tooltips-style" = "tlsog-default-style"
   fg[NORMAL] = "#343434"
 }
 
-widget "gtk-tooltip" style "tlsog-tooltips-style"
+widget "gtk-tooltip*" style "tlsog-tooltips-style"
 
 ###########################################################
 
@@ -450,6 +442,42 @@ style "tlsog-treeview" = "tlsog-default-style"
 
   engine  "pixmap"
     {
+      image
+        {
+          function = FLAT_BOX
+          state = ACTIVE
+          file = "ui/null.png"
+          border = {1,1,1,1}
+          stretch = TRUE
+        }
+
+      image
+        {
+          function = FLAT_BOX
+          state = PRELIGHT
+          file = "ui/null.png"
+          border = {1,1,1,1}
+          stretch = TRUE
+        }
+
+      image
+        {
+          function = FLAT_BOX
+          state = NORMAL
+          file = "ui/null.png"
+          border = {1,1,1,1}
+          stretch = TRUE
+        }
+
+      image
+        {
+          function = FLAT_BOX
+          state = INSENSITIVE
+          file = "ui/null.png"
+          border = {1,1,1,1}
+          stretch = TRUE
+        }
+
       image
         {
           function = FLAT_BOX
@@ -544,28 +572,6 @@ style "tlsog-list-header-style"
 widget_class "*List" style "tlsog-list-header-style"
 widget_class "*GtkTree*" style "tlsog-list-header-style"
 widget_class "*GtkCList" style "tlsog-list-header-style"
-
-style "tlsog-list-header-style"
-{
-  fg[PRELIGHT] = "#0F0"
-  fg[ACTIVE] = "#F00"
-  fg[NORMAL] = "#00F"
-  fg[SELECTED] = "#F0F"
-  fg[INSENSITIVE] = "#FF0"
-
-  engine "pixmap"
-    {
-      image
-        {
-          function = BOX
-          recolorable = TRUE
-          file = "ui/gimp-button-normal.png"
-          border = { 0, 0, 0, 0 }
-          stretch = TRUE
-        }
-    }
-}
-widget_class "*GtkComboBox*" style "tlsog-list-header-style"
 
 ###########################################################
 
@@ -960,7 +966,7 @@ style "tlsog-entry" = "tlsog-default-style"
         {
           function = SHADOW
           detail = "entry"
-          file = "ui/null.png"
+          file = "ui/shadow-null.png"
           border = { 4, 4, 4, 4 }
           stretch = TRUE
         }
@@ -1161,7 +1167,7 @@ style "tlsog-scroll-bar"
         {
           function = BOX
           recolorable = TRUE
-          file = "ui/transparent.png"
+          file = "ui/null.png"
           border = {0,0,0,0}
           stretch = TRUE
         }
@@ -1790,7 +1796,7 @@ style "tlsog-range-style"
       image
         {
           function = BOX
-          file = "ui/null.png"
+          file = "ui/transparent.png"
           border = { 3, 3, 3, 3 }
           stretch = TRUE
         }
@@ -2050,6 +2056,16 @@ style "tlsog-toolbar-style"
 
       image
         {
+          function = BOX_GAP
+          recolorable = TRUE
+          detail = "handlebox_bin"
+          file = "ui/gimp-handle-h.png"
+          border = { 4, 3, 4, 3 }
+          stretch = FALSE
+        }
+
+      image
+        {
           function = HANDLE
           overlay_file = "ui/gimp-handle-h.png"
           overlay_stretch = FALSE
@@ -2085,7 +2101,7 @@ style "tlsog-toolbar-style"
 }
 
 class "GtkToolbar" style "tlsog-toolbar-style"
-class "*HandleBox" style "tlsog-toolbar-style"
+class "*HandleBox*" style "tlsog-toolbar-style"
 
 ###########################################################
 
@@ -2213,6 +2229,27 @@ style "tlsog-combobox-style"
 }
 
 widget_class "*<GtkComboBox>" style "tlsog-combobox-style"
+
+###########################################################
+
+style "tdsog-combobox-style1"
+{
+  xthickness = 0
+  ythickness = 0
+
+  engine "pixmap"
+    {
+      image
+        {
+          function = BOX
+          file = "ui/gimp-button-normal.png"
+          border = { 4, 4, 5, 4 }
+          stretch = TRUE
+        }
+    }
+}
+
+widget_class "*<GtkEntry>*<GtkButton>*" style "tdsog-combobox-style1"
 
 ###########################################################
 
@@ -2352,7 +2389,7 @@ widget_class "*<GtkWidget>*" style "kde_hack_4"
 ###########################################################
 
 # KDE Hack 5
-widget_class "*<GtkToolbar>*" style "sogg-toolbar-style"
+widget_class "*<GtkToolbar>*" style "tlsog-toolbar-style"
 
 ###########################################################
 
@@ -2413,9 +2450,6 @@ widget_class "*<GtkTreeView>*<GtkButton>*" style "kde_hack_6"
 # KDE & oxygen-gtk fix for BG
 style "tdsog-oxygen-default-style" = "tdsog-default-style"
 {
-  engine "oxygen-gtk"
-    {
-    }
 }
 class "*" style "tdsog-oxygen-default-style"
 
