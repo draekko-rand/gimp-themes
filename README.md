@@ -59,8 +59,5 @@ Screenshots
 ![alt text](https://raw.githubusercontent.com/Draekko-RAND/gimp-themes/gimp-2_10/screenshots/light.png "Light theme")  
 
 
-Install
-===
-
 
   
