@@ -2,7 +2,7 @@
 #
 # The Light Side of GIMP Theme
 #
-# Version 0.1.1
+# Version 0.1.2
 #
 # Copyright 2015, Benoit Touchette
 #
@@ -39,7 +39,7 @@
 # KDE:
 #
 # * For this theme to work under KDE users will need to disable either
-#   "Apply colors to non-QT applications" or "Apply KDE Colours to Non-KDE 
+#   "Apply colors to non-QT applications" or "Apply KDE Colours to Non-KDE
 #   apps" depending on the version.
 #
 # Miscellaneous:
@@ -130,22 +130,28 @@ style "tlsog-default-style"
   GtkButton::focus-line_width = 0
   GtkButton::focus-padding = 0
 
-  GtkScrollbar::trough-border = 0
   GtkRange::trough-border = 0
   GtkRange::slider-width = 15
   GtkRange::stepper-size = 0
 
+  GtkScale::slider-length = 14
+  GtkScale::slider-width  = 14
+  GtkScale::trough-border = 0
+  GtkScale::trough-side-details = 1
+
+  GtkVScale::slider_length = 14
+  GtkVScale::slider_width = 14
+
+  GtkHScale::slider_length = 14
+  GtkHScale::slider_width = 14
+
+  GtkScrollbar::trough-border = 0
   GtkScrollbar::activate-slider = 1
   GtkScrollbar::has-backward-stepper = 0
   GtkScrollbar::has-forward-stepper = 0
   GtkScrollbar::min-slider-length = 32
   GtkScrolledWindow::scrollbar-spacing = 0
   GtkScrolledWindow::scrollbars-within-bevel = 0
-
-  GtkVScale::slider_length = 19
-  GtkVScale::slider_width = 19
-  GtkHScale::slider_length = 19
-  GtkHScale::slider_width = 19
 
   GtkTreeView::expander-size = 13
   GtkExpander::expander-size = 13
@@ -2232,7 +2238,7 @@ widget_class "*<GtkComboBox>" style "tlsog-combobox-style"
 
 ###########################################################
 
-style "tdsog-combobox-style1"
+style "tlsog-combobox-style1"
 {
   xthickness = 0
   ythickness = 0
@@ -2249,7 +2255,7 @@ style "tdsog-combobox-style1"
     }
 }
 
-widget_class "*<GtkEntry>*<GtkButton>*" style "tdsog-combobox-style1"
+widget_class "*<GtkEntry>*<GtkButton>*" style "tlsog-combobox-style1"
 
 ###########################################################
 
@@ -2448,10 +2454,66 @@ widget_class "*<GtkTreeView>*<GtkButton>*" style "kde_hack_6"
 ###########################################################
 
 # KDE & oxygen-gtk fix for BG
-style "tdsog-oxygen-default-style" = "tdsog-default-style"
+style "tlsog-oxygen-default-style" = "tlsog-default-style"
 {
 }
-class "*" style "tdsog-oxygen-default-style"
+
+class "*" style "tlsog-oxygen-default-style"
+
+###########################################################
+
+style "tlsog-gtkscale-style"
+{
+  engine "pixmap"
+    {
+      image
+        {
+          function = SLIDER
+          recolorable = TRUE
+          file = "ui/bar-h.png"
+          border = { 2,2,2,2 }
+          stretch = TRUE
+          orientation = HORIZONTAL
+        }
+
+      image
+        {
+          function = SLIDER
+          recolorable = TRUE
+          file = "ui/bar-v.png"
+          border = { 2,2,2,2 }
+          stretch = TRUE
+          orientation = VERTICAL
+        }
+
+      image
+        {
+          function = BOX
+          recolorable = TRUE
+          file = "ui/slider-h.png"
+          border = {0,0,0,0}
+          stretch = TRUE
+          orientation = HORIZONTAL
+        }
+
+      image
+        {
+          function = BOX
+          recolorable = TRUE
+          file = "ui/slider-v.png"
+          border = {0,0,0,0}
+          stretch = TRUE
+          orientation = VERTICAL
+        }
+    }
+}
+
+class "GtkScale" style "tlsog-gtkscale-style"
+class "GtkVScale" style "tlsog-gtkscale-style"
+class "GtkHScale" style "tlsog-gtkscale-style"
+widget_class "*<GtkScale>*" style "tlsog-gtkscale-style"
+widget_class "*<GtkVScale>*" style "tlsog-gtkscale-style"
+widget_class "*<GtkHScale>*" style "tlsog-gtkscale-style"
 
 ###########################################################
 
