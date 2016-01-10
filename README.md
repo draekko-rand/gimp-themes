@@ -11,13 +11,13 @@ Install
 
 Copy the theme folders to the locations here depending on your OS :  
 
-Windows: C:\Users\<your user name>\.gimp-2.10\themes  
-
 Mac OS X: ~/Library/Application Support/GIMP/2.10/themes   or   ~/.gimp-2.10/themes  
 
   * (You may have to unhide the Library folder first)  
 
-Linux: ~/.gimp-2.10/themes   or   /home/<your user name>/.gimp-2.10/themes  
+Linux: ~/.config/GIMP/2.10/themes  
+
+Windows: C:\Users\your_user_name\\.config\GIMP\2.10\themes  
 
 (For the development version use 2.9 as the user settings directory)  
 
