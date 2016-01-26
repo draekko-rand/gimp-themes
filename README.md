@@ -29,6 +29,8 @@ Notes
 
   * Fonts can be overridden by uncommenting the two font lines in the theme gtkrc file.
 
+  * "The Dark Side of Gimp" and "The Light Side of Gimp" are included with Gimp but the files are forked from this version.
+
 
 Screenshots
 ===
