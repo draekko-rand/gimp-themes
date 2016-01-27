@@ -2,7 +2,7 @@ GIMP Themes
 ===
 
 
-Collection of themes i created for GIMP 2.10
+Collection of themes created for GIMP 2.10
 
 
 Install
