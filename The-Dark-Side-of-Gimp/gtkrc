@@ -815,7 +815,7 @@ widget_class "*<GtkMenuBar>.<GtkMenuItem>*" style "tdsog-menu-bar"
 
 ###########################################################
 
-style "menu_item"
+style "tdsog-menu-item"
 {
   xthickness = 2
   ythickness = 4
@@ -898,8 +898,8 @@ style "menu_item"
     }
 }
 
-class "GtkMenuItem" style "menu_item"
-widget_class "*<GtkMenuItem>*" style "menu_item"
+class "GtkMenuItem" style "tdsog-menu-item"
+widget_class "*<GtkMenuItem>*" style "tdsog-menu-item"
 
 ###########################################################
 

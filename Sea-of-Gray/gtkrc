@@ -816,7 +816,7 @@ widget_class "*<GtkMenuBar>.<GtkMenuItem>*" style "sogg-menu-bar"
 
 ###########################################################
 
-style "menu_item"
+style "sogg-menu-item"
 {
   xthickness = 2
   ythickness = 4
@@ -899,8 +899,8 @@ style "menu_item"
     }
 }
 
-class "GtkMenuItem" style "menu_item"
-widget_class "*<GtkMenuItem>*" style "menu_item"
+class "GtkMenuItem" style "sogg-menu-item"
+widget_class "*<GtkMenuItem>*" style "sogg-menu-item"
 
 ###########################################################
 

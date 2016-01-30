@@ -815,7 +815,7 @@ widget_class "*<GtkMenuBar>.<GtkMenuItem>*" style "gimp-light-menu-bar"
 
 ###########################################################
 
-style "menu_item"
+style "gimp-light-menu-item"
 {
   xthickness = 2
   ythickness = 4
@@ -898,8 +898,8 @@ style "menu_item"
     }
 }
 
-class "GtkMenuItem" style "menu_item"
-widget_class "*<GtkMenuItem>*" style "menu_item"
+class "GtkMenuItem" style "gimp-light-menu-item"
+widget_class "*<GtkMenuItem>*" style "gimp-light-menu-item"
 
 ###########################################################
 
