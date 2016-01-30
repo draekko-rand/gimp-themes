@@ -2,7 +2,7 @@
 #
 # Dark GIMP Theme
 #
-# Version 0.1.4
+# Version 0.1.5
 #
 # Copyright 2015-2016, Benoit Touchette
 #
@@ -815,7 +815,7 @@ widget_class "*<GtkMenuBar>.<GtkMenuItem>*" style "gimp-dark-menu-bar"
 
 ###########################################################
 
-style "menu_item"
+style "gimp-dark-menu-item"
 {
   xthickness = 2
   ythickness = 4
@@ -898,8 +898,8 @@ style "menu_item"
     }
 }
 
-class "GtkMenuItem" style "menu_item"
-widget_class "*<GtkMenuItem>*" style "menu_item"
+class "*GtkMenuItem*" style "gimp-dark-menu-item"
+widget_class "*<GtkMenuItem>*" style "gimp-dark-menu-item"
 
 ###########################################################
 
@@ -949,6 +949,7 @@ style "gimp-dark-item"
 }
 
 class "GtkItem" style "gimp-dark-item"
+widget_class "*GtkItem*" style "gimp-dark-item"
 
 ###########################################################
 
@@ -2449,6 +2450,26 @@ style "tdsog-overlay-scrollbar"
 
 widget_class "*<OsScrollbar>" style "tdsog-overlay-scrollbar"
 widget_class "*<OsThumb>" style "tdsog-overlay-scrollbar"
+
+###########################################################
+
+# Menu prelight fix for Ubuntu Unity
+style "ubuntu-fix-menu-item"
+{
+  engine "pixmap"
+    {
+      image
+        {
+          function = BOX
+          state = PRELIGHT
+          file = "ui/entry-border-fill-active.png"
+          border = { 1, 0, 1, 0 }
+          stretch = TRUE
+        }
+    }
+}
+
+widget "GtkMenuItem" style "ubuntu-fix-menu-item"
 
 ###########################################################
 

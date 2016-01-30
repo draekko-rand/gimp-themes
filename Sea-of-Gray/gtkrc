@@ -2,7 +2,7 @@
 #
 # Sea Of Gray GIMP Theme
 #
-# Version 0.1.4
+# Version 0.1.5
 #
 # Copyright 2015-2016, Benoit Touchette
 #
@@ -2224,6 +2224,22 @@ style "kde_hack_1"
   text[ACTIVE] = @clr8
   text[SELECTED] = @clr8
   text[INSENSITIVE] = @clr9
+
+  #
+  # Menu prelight fix for Ubuntu Unity
+  #
+
+  engine "pixmap"
+    {
+      image
+        {
+          function = BOX
+          state = PRELIGHT
+          file = "ui/entry-border-fill-active.png"
+          border = { 1, 0, 1, 0 }
+          stretch = TRUE
+        }
+    }
 }
 
 widget_class "*" style "kde_hack_1"
@@ -2478,6 +2494,26 @@ style "tlsog-plugin-scrolled-window-style"
 }
 
 widget_class "*<GtkScrolledWindow>*<GtkViewport>" style "tlsog-plugin-scrolled-window-style"
+
+###########################################################
+
+# Menu prelight fix for Ubuntu Unity
+style "ubuntu-fix-menu-item"
+{
+  engine "pixmap"
+    {
+      image
+        {
+          function = BOX
+          state = PRELIGHT
+          file = "ui/entry-border-fill-active.png"
+          border = { 1, 0, 1, 0 }
+          stretch = TRUE
+        }
+    }
+}
+
+widget "GtkMenuItem" style "ubuntu-fix-menu-item"
 
 ###########################################################
 
