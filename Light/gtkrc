@@ -758,6 +758,7 @@ class "GtkNotebook" style "gimp-light-notebook-style"
 
 style "gimp-light-menu" = "gimp-light-default-style"
 {
+  # bg[NORMAL] affects menu detachable item
   bg[NORMAL] = "#DDDDDD"
 
   fg[NORMAL] = "#343434"

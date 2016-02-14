@@ -759,7 +759,8 @@ class "GtkNotebook" style "sogg-notebook-style"
 
 style "sogg-menu" = "sogg-default-style"
 {
-  bg[NORMAL] = "#B7B7B7"
+  # bg[NORMAL] affects menu detachable item
+  bg[NORMAL] = "#999"
 
   fg[NORMAL] = "#343434"
   fg[PRELIGHT] = "#000000"
@@ -836,7 +837,7 @@ style "sogg-menu-item"
         {
           function = BOX
           state = PRELIGHT
-          file = "ui/entry-border-fill-active-item.png"
+          file = "ui/menu-prelight.png"
           border = { 1, 0, 1, 0 }
           stretch = TRUE
         }
@@ -2498,7 +2499,7 @@ style "ubuntu-fix-menu-item"
         {
           function = BOX
           state = PRELIGHT
-          file = "ui/entry-border-fill-active.png"
+          file = "ui/menu-prelight.png"
           border = { 1, 0, 1, 0 }
           stretch = TRUE
         }

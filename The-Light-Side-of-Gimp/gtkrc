@@ -758,6 +758,7 @@ class "GtkNotebook" style "tlsog-notebook-style"
 
 style "tlsog-menu" = "tlsog-default-style"
 {
+  # bg[NORMAL] affects menu detachable item
   bg[NORMAL] = "#B7B7B7"
 
   fg[NORMAL] = "#343434"
