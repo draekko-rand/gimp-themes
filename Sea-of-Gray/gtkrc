@@ -2,7 +2,7 @@
 #
 # Sea Of Gray GIMP Theme
 #
-# Version 0.1.5
+# Version 0.1.6
 #
 # Copyright 2015-2016, Benoit Touchette
 #
@@ -76,10 +76,11 @@ style "sogg-default-style"
   color["clr7"] = "#3b3b3b"
   color["clr8"] = "#DDDDDD"
   color["clr9"] = "#B2B2B2"
+  color["clr10"] = "#000000"
 
-  fg[NORMAL] = @clr1
-  fg[PRELIGHT] = @clr1
-  fg[ACTIVE] = @clr1
+  fg[NORMAL] = @clr2
+  fg[PRELIGHT] = @clr10
+  fg[ACTIVE] = @clr3
   fg[SELECTED] = @clr2
   fg[INSENSITIVE] = @clr3
 
@@ -96,7 +97,7 @@ style "sogg-default-style"
   base[INSENSITIVE] = @clr8
 
   text[NORMAL] = @clr1
-  text[PRELIGHT] = @clr1
+  text[PRELIGHT] = @clr10
   text[ACTIVE] = @clr8
   text[SELECTED] = @clr8
   text[INSENSITIVE] = @clr9
@@ -112,7 +113,7 @@ style "sogg-default-style"
   GimpDock::font-scale = 0.8333
   GimpMenuDock::minimal-width = 200
   GimpDockWindow::menu-preview-size = small-toolbar
-  GimpToolPalette::tool-icon-size = menu
+  GimpToolPalette::tool-icon-size = large-toolbar
   GimpToolPalette::button-relief = none
   GimpDockbook::tab-border = 0
   GimpDockbook::tab-icon-size = menu
@@ -475,7 +476,7 @@ style "sogg-treeview" = "sogg-default-style"
         {
           function = FLAT_BOX
           state = PRELIGHT
-          file = "ui/null.png"
+          file = "ui/menuitem-prelight.png"
           border = {1,1,1,1}
           stretch = TRUE
         }
@@ -720,7 +721,7 @@ style "sogg-notebook-style" = "sogg-default-style"
           border = { 3, 3, 3, 3 }
           stretch = TRUE
           gap_file = "ui/gap_left.png"
-          gap_border = { 2, 2, 2, 2 }
+          gap_border = { 1, 1, 2, 2 }
           gap_start_file = "ui/null.png"
           gap_end_file = "ui/null.png"
           gap_side = LEFT
@@ -1833,6 +1834,12 @@ style "sogg-spin-scale-style"
 {
   bg[NORMAL] = "#BDBDBD"
 
+  text[NORMAL] = "#F00"
+  text[PRELIGHT] = "#0F0"
+  text[ACTIVE] = "#00F"
+  text[SELECTED] = "#FF0"
+  text[INSENSITIVE] = "#0FF"
+
   engine "pixmap"
     {
       image
@@ -2206,10 +2213,11 @@ style "kde_hack_1"
   color["clr7"] = "#3b3b3b"
   color["clr8"] = "#DDDDDD"
   color["clr9"] = "#B2B2B2"
+  color["clr10"] = "#000000"
 
-  fg[NORMAL] = @clr1
-  fg[PRELIGHT] = @clr1
-  fg[ACTIVE] = @clr1
+  fg[NORMAL] = @clr2
+  fg[PRELIGHT] = @clr10
+  fg[ACTIVE] = @clr3
   fg[SELECTED] = @clr2
   fg[INSENSITIVE] = @clr3
 
@@ -2220,26 +2228,10 @@ style "kde_hack_1"
   base[INSENSITIVE] = @clr8
 
   text[NORMAL] = @clr1
-  text[PRELIGHT] = @clr1
+  text[PRELIGHT] = @clr10
   text[ACTIVE] = @clr8
   text[SELECTED] = @clr8
   text[INSENSITIVE] = @clr9
-
-  #
-  # Menu prelight fix for Ubuntu Unity
-  #
-
-  engine "pixmap"
-    {
-      image
-        {
-          function = BOX
-          state = PRELIGHT
-          file = "ui/entry-border-fill-active.png"
-          border = { 1, 0, 1, 0 }
-          stretch = TRUE
-        }
-    }
 }
 
 widget_class "*" style "kde_hack_1"

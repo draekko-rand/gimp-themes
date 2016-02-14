@@ -2,7 +2,7 @@
 #
 # Dark GIMP Theme
 #
-# Version 0.1.5
+# Version 0.1.6
 #
 # Copyright 2015-2016, Benoit Touchette
 #
@@ -67,20 +67,20 @@ style "gimp-dark-default-style"
 {
 #  font_name = "Sans 11"
 
-  color["clr1"]  = "#FFFFFF"
-  color["clr2"]  = "#ffffff"
-  color["clr3"]  = "#c1c1c1"
+  color["clr1"]  = "#EEEEEE"
+  color["clr2"]  = "#FFFFFF"
+  color["clr3"]  = "#C1C1C1"
   color["clr4"]  = "#383838"
   color["clr5"]  = "#555555"
   color["clr6"]  = "#828282"
-  color["clr7"]  = "#3b3b3b"
+  color["clr7"]  = "#3B3B3B"
   color["clr8"]  = "#383838"
   color["clr9"]  = "#4D4D4D"
 
   fg[NORMAL] = @clr1
-  fg[PRELIGHT] = @clr1
-  fg[ACTIVE] = @clr1
-  fg[SELECTED] = @clr2
+  fg[PRELIGHT] = @clr2
+  fg[ACTIVE] = @clr3
+  fg[SELECTED] = @clr1
   fg[INSENSITIVE] = @clr3
 
   bg[NORMAL] = @clr4
@@ -112,7 +112,7 @@ style "gimp-dark-default-style"
   GimpDock::font-scale = 0.8333
   GimpMenuDock::minimal-width = 200
   GimpDockWindow::menu-preview-size = small-toolbar
-  GimpToolPalette::tool-icon-size = menu
+  GimpToolPalette::tool-icon-size = large-toolbar
   GimpToolPalette::button-relief = none
   GimpDockbook::tab-border = 0
   GimpDockbook::tab-icon-size = menu
@@ -719,7 +719,7 @@ style "gimp-dark-notebook-style" = "gimp-dark-default-style"
           border = { 3, 3, 3, 3 }
           stretch = TRUE
           gap_file = "ui/gap_left.png"
-          gap_border = { 2, 2, 2, 2 }
+          gap_border = { 1, 1, 2, 2 }
           gap_start_file = "ui/null.png"
           gap_end_file = "ui/null.png"
           gap_side = LEFT
@@ -2193,7 +2193,7 @@ style "kde_hack_1"
   GtkComboBoxText::appears-as-list = 0
 
   color["clr1"]  = "#EEEEEE"
-  color["clr2"]  = "#ffffff"
+  color["clr2"]  = "#FFFFFF"
   color["clr3"]  = "#c1c1c1"
   color["clr4"]  = "#383838"
   color["clr5"]  = "#555555"
@@ -2203,9 +2203,9 @@ style "kde_hack_1"
   color["clr9"]  = "#4D4D4D"
 
   fg[NORMAL] = @clr1
-  fg[PRELIGHT] = @clr1
-  fg[ACTIVE] = @clr1
-  fg[SELECTED] = @clr2
+  fg[PRELIGHT] = @clr2
+  fg[ACTIVE] = @clr3
+  fg[SELECTED] = @clr1
   fg[INSENSITIVE] = @clr3
 
   base[NORMAL] = @clr6
@@ -2214,7 +2214,7 @@ style "kde_hack_1"
   base[SELECTED] = @clr7
   base[INSENSITIVE] = @clr8
 
-  text[NORMAL] = @clr1
+  text[NORMAL] = @clr2
   text[PRELIGHT] = @clr1
   text[ACTIVE] = @clr1
   text[SELECTED] = @clr1

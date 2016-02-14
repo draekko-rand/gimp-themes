@@ -2,7 +2,7 @@
 #
 # The Light Side of GIMP Theme
 #
-# Version 0.1.5
+# Version 0.1.6
 #
 # Copyright 2015-2016, Benoit Touchette
 #
@@ -76,11 +76,12 @@ style "tlsog-default-style"
   color["clr7"] = "#3b3b3b"
   color["clr8"] = "#DDDDDD"
   color["clr9"] = "#B2B2B2"
+  color["clr10"] = "#000000"
 
-  fg[NORMAL] = @clr1
-  fg[PRELIGHT] = @clr1
-  fg[ACTIVE] = @clr1
-  fg[SELECTED] = @clr2
+  fg[NORMAL] = @clr3
+  fg[PRELIGHT] = @clr10
+  fg[ACTIVE] = @clr2
+  fg[SELECTED] = @clr1
   fg[INSENSITIVE] = @clr3
 
   bg[NORMAL] = @clr4
@@ -96,7 +97,7 @@ style "tlsog-default-style"
   base[INSENSITIVE] = @clr8
 
   text[NORMAL] = @clr1
-  text[PRELIGHT] = @clr1
+  text[PRELIGHT] = @clr10
   text[ACTIVE] = @clr1
   text[SELECTED] = @clr1
   text[INSENSITIVE] = @clr9
@@ -112,7 +113,7 @@ style "tlsog-default-style"
   GimpDock::font-scale = 0.8333
   GimpMenuDock::minimal-width = 200
   GimpDockWindow::menu-preview-size = small-toolbar
-  GimpToolPalette::tool-icon-size = menu
+  GimpToolPalette::tool-icon-size = large-toolbar
   GimpToolPalette::button-relief = none
   GimpDockbook::tab-border = 0
   GimpDockbook::tab-icon-size = menu
@@ -502,7 +503,7 @@ style "tlsog-treeview" = "tlsog-default-style"
         {
           function = FLAT_BOX
           state = SELECTED
-          file = "ui/menuitem.png"
+          file = "ui/menuitem-prelight.png"
           border = {1,1,1,1}
           stretch = TRUE
         }
@@ -719,7 +720,7 @@ style "tlsog-notebook-style" = "tlsog-default-style"
           border = { 3, 3, 3, 3 }
           stretch = TRUE
           gap_file = "ui/gap_left.png"
-          gap_border = { 2, 2, 2, 2 }
+          gap_border = { 1, 1, 2, 2 }
           gap_start_file = "ui/null.png"
           gap_end_file = "ui/null.png"
           gap_side = LEFT
@@ -2210,14 +2211,15 @@ style "kde_hack_1"
   color["clr4"] = "#DDDDDD"
   color["clr5"] = "#EEEEEE"
   color["clr6"] = "#BDBDBD"
-  color["clr7"] = "#3b3b3b"
+  color["clr7"] = "#3B3B3B"
   color["clr8"] = "#DDDDDD"
   color["clr9"] = "#B2B2B2"
+  color["clr10"] = "#000000"
 
-  fg[NORMAL] = @clr1
-  fg[PRELIGHT] = @clr1
-  fg[ACTIVE] = @clr1
-  fg[SELECTED] = @clr2
+  fg[NORMAL] = @clr3
+  fg[PRELIGHT] = @clr10
+  fg[ACTIVE] = @clr2
+  fg[SELECTED] = @clr1
   fg[INSENSITIVE] = @clr3
 
   base[NORMAL] = @clr6
@@ -2227,7 +2229,7 @@ style "kde_hack_1"
   base[INSENSITIVE] = @clr8
 
   text[NORMAL] = @clr1
-  text[PRELIGHT] = @clr1
+  text[PRELIGHT] = @clr10
   text[ACTIVE] = @clr1
   text[SELECTED] = @clr1
   text[INSENSITIVE] = @clr7
