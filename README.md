@@ -36,7 +36,7 @@ Screenshots
 ===
 
   
-###The Dark Side of GIMP Theme (included with GIMP)  
+###Darker GIMP Theme (included with GIMP)  
 
 ![alt text](https://raw.githubusercontent.com/Draekko-RAND/gimp-themes/gimp-2_10/screenshots/tdsog.png "The Dark Side of GIMP theme")  
 
@@ -46,17 +46,17 @@ Screenshots
 ![alt text](https://raw.githubusercontent.com/Draekko-RAND/gimp-themes/gimp-2_10/screenshots/dark.png "Dark theme")  
 
   
-###Sea of Gray Theme  
+###Gray Theme  
 
 ![alt text](https://raw.githubusercontent.com/Draekko-RAND/gimp-themes/gimp-2_10/screenshots/sog.png "Sea of Gray theme")  
 
   
-###The Light Side of GIMP Theme (included with GIMP)  
+###Light GIMP Theme (included with GIMP)  
 
 ![alt text](https://raw.githubusercontent.com/Draekko-RAND/gimp-themes/gimp-2_10/screenshots/tlsog.png "The Light Side of GIMP theme")  
 
   
-###Light Theme  
+###Lighter Theme  
 
 ![alt text](https://raw.githubusercontent.com/Draekko-RAND/gimp-themes/gimp-2_10/screenshots/light.png "Light theme")  
 
