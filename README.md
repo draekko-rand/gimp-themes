@@ -32,11 +32,11 @@ Notes
   * "The Dark Side of Gimp" and "The Light Side of Gimp" are included with Gimp but the files are forked from this version.
 
 
-Screenshots
+Screenshots (all are included with GIMP)
 ===
 
   
-###Darker GIMP Theme (included with GIMP)  
+###Darker GIMP Theme   
 
 ![alt text](https://raw.githubusercontent.com/Draekko-RAND/gimp-themes/gimp-2_10/screenshots/tdsog.png "The Dark Side of GIMP theme")  
 
@@ -51,7 +51,7 @@ Screenshots
 ![alt text](https://raw.githubusercontent.com/Draekko-RAND/gimp-themes/gimp-2_10/screenshots/sog.png "Sea of Gray theme")  
 
   
-###Light GIMP Theme (included with GIMP)  
+###Light GIMP Theme
 
 ![alt text](https://raw.githubusercontent.com/Draekko-RAND/gimp-themes/gimp-2_10/screenshots/tlsog.png "The Light Side of GIMP theme")  
 
