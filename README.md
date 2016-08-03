@@ -1,6 +1,7 @@
 GIMP Themes
 ===
 
+[All of these themes are now a part of GIMP and included by default starting with version 2.9.2]
 
 Collection of themes created for GIMP 2.10
 
@@ -32,7 +33,7 @@ Notes
   * "The Dark Side of Gimp" and "The Light Side of Gimp" are included with Gimp but the files are forked from this version.
 
 
-Screenshots (all are included with GIMP)
+Screenshots
 ===
 
   
