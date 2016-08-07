@@ -31,7 +31,9 @@ Notes
   * Fonts can be overridden by uncommenting the two font lines in the theme gtkrc file.
 
   * "The Dark Side of Gimp" and "The Light Side of Gimp" are included with Gimp but the files are forked from this version.
-
+  
+  * Make the toolbar icons smaller by add the line after the colon to the beginning of the gtkrc file for the desired theme : gtk-icon-sizes = "gtk-small-toolbar=16,16:gtk-large-toolbar=16,16"
+  
 
 Screenshots
 ===
